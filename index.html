@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOVE PIZZA | Pizza Artesanal Hecha con Amor</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Love Pizza: Deliciosa pizza artesanal en forma de corazón sobre masa madurada 48 horas. Pide en línea con carrito interactivo y entrega por WhatsApp.">
+  <meta name="keywords" content="pizza, love pizza, pizza en forma de corazon, pizza artesanal, delivery pizza, guatemala, quetzales">
+  <meta name="author" content="Love Pizza">
+  <meta name="theme-color" content="#1C1C1C">
+  
+  <!-- Open Graph / Redes Sociales -->
+  <meta property="og:title" content="LOVE PIZZA - Pizza Hecha con Amor">
+  <meta property="og:description" content="Descubre nuestras pizzas clásicas, especiales en forma de corazón y combos irresistibles. Ordena fácil por WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/HeartPizza.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+
+  <!-- Google Fonts: Lilita One (Display), Nunito (Texto), Caveat Brush (Tiza) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Lilita+One&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Capa fija de textura de pizarra y doodles de tiza -->
+  <div class="chalkboard-bg" aria-hidden="true"></div>
+
+  <!-- ══════════════ HEADER / NAVEGACIÓN ══════════════ -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <!-- Logo LOVE PIZZA -->
+      <a href="#hero" class="brand-logo" aria-label="Love Pizza - Ir al inicio">
+        <img src="img/logo.svg" alt="LOVE PIZZA - Pizza hecha con amor" width="180" height="42" class="logo-img">
+      </a>
+
+      <!-- Menú de Navegación Principal -->
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#nosotros" class="nav-link"><span class="nav-num">01</span> Nosotros</a></li>
+          <li><a href="#menu" class="nav-link"><span class="nav-num">02</span> Menú</a></li>
+          <li><a href="#galeria" class="nav-link"><span class="nav-num">03</span> Galería</a></li>
+          <li><a href="#contacto" class="nav-link"><span class="nav-num">04</span> Pedido & Info</a></li>
+        </ul>
+      </nav>
+
+      <!-- Acciones de Cabecera: Botón Carrito & Hamburguesa -->
+      <div class="header-actions">
+        <!-- Botón Carrito con Badge Contador e Icono SVG -->
+        <button type="button" class="cart-trigger-btn" id="cart-open-btn" aria-label="Abrir carrito de compras" aria-haspopup="dialog">
+          <svg class="cart-svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-text">Pedido</span>
+          <span class="cart-badge" id="cart-count" aria-live="polite">0</span>
+        </button>
+
+        <!-- Botón Menú Hamburguesa Móvil -->
+        <button type="button" class="menu-toggle-btn" id="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú de navegación">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════ HERO SECTION (Pantalla Completa) ══════════════ -->
+  <section class="hero-section" id="hero">
+    <!-- Porciones de pizza decorativas flotantes en esquinas -->
+    <div class="hero-slice slice-top-left" aria-hidden="true">
+      <img src="img/Rebanada.webp" alt="" width="160" height="160">
+    </div>
+    <div class="hero-slice slice-bottom-right" aria-hidden="true">
+      <img src="img/Rebanada.webp" alt="" width="160" height="160">
+    </div>
+
+    <div class="container hero-container">
+      <div class="hero-content reveal">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-chalk">Artesanal & Caliente</span>
+        </div>
+        <h1 class="hero-title">
+          Pizza hecha con <em>amor.</em>
+        </h1>
+        <p class="hero-subtitle">
+          Masa fermentada lentamente durante 48 horas, salsa de tomates madurados al sol y mozzarella dorada al horno de piedra. Cada porción es un flechazo directo al corazón.
+        </p>
+
+        <!-- Botones de Acción Hero -->
+        <div class="hero-cta-group">
+          <a href="#menu" class="btn btn-primary btn-lg">
+            Ver menú completo <span class="arrow-down">↓</span>
+          </a>
+          <button type="button" class="btn btn-secondary btn-lg" id="hero-quick-order">
+            Ver mi pedido
+            <svg class="btn-heart-svg" width="18" height="18" viewBox="0 0 24 24" fill="#E31E24" stroke="#FFF" stroke-width="1.5" aria-hidden="true">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Ficha de Datos Rápidos (Horario y Ubicación) -->
+        <div class="hero-info-pills">
+          <div class="info-pill">
+            <span class="pill-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </span>
+            <div class="pill-text">
+              <strong>Av. Las Américas 14-20, Zona 13</strong>
+              <small>Ciudad de Guatemala</small>
+            </div>
+          </div>
+          <div class="info-pill">
+            <span class="pill-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </span>
+            <div class="pill-text">
+              <strong>Mar a Dom: 12:00 PM – 10:30 PM</strong>
+              <small>Lunes de descanso y masa</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagen Destacada del Hero: Pizza de Corazón -->
+      <div class="hero-visual reveal">
+        <div class="hero-image-wrapper">
+          <div class="heart-glow" aria-hidden="true"></div>
+          <img src="img/HeartPizza.png" alt="Pizza en forma de corazón Love Pizza" class="hero-main-pizza" width="460" height="460">
+          <div class="hero-floating-badge" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#E31E24" stroke="#FFF" stroke-width="1.5">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            <span class="badge-text">100% Queso Real</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ SECCIÓN 01: NOSOTROS (Fondo Crema) ══════════════ -->
+  <section class="section section-cream" id="nosotros">
+    <div class="container">
+      <header class="section-header reveal">
+        <span class="eyebrow">01 — Nuestra Historia</span>
+        <h2 class="section-title">Pasión que se hornea a <em>450°C.</em></h2>
+        <div class="heart-divider" aria-hidden="true">
+          <span></span>
+          <svg class="heart-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="#E31E24" stroke="#C68A50" stroke-width="1.5">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span></span>
+        </div>
+      </header>
+
+      <div class="nosotros-grid">
+        <div class="nosotros-text reveal">
+          <p class="lead-text">
+            En <strong>LOVE PIZZA</strong> creemos que la buena comida une a las personas. No hacemos pizzas en serie; creamos obras de arte crujientes con masa madre viva que reposa pacientemente durante dos días enteros.
+          </p>
+          <p>
+            Nuestra icónica forma de corazón nació como un regalo para una fecha especial y hoy es el sello de identidad que enamora a toda la ciudad. Cada ingrediente es seleccionado a mano: tomates pomodoro italianos, queso mozzarella de granjas locales y hierbas aromáticas recién cortadas.
+          </p>
+
+          <div class="badges-row">
+            <div class="feature-tag">
+              <span class="tag-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E31E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 22h14"></path>
+                  <path d="M5 2h14"></path>
+                  <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"></path>
+                  <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"></path>
+                </svg>
+              </span>
+              <div>
+                <strong>Masa 48h</strong>
+                <small>Ligera y fácil de digerir</small>
+              </div>
+            </div>
+            <div class="feature-tag">
+              <span class="tag-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E31E24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+                </svg>
+              </span>
+              <div>
+                <strong>Horno de Piedra</strong>
+                <small>Burbujas doradas perfectas</small>
+              </div>
+            </div>
+            <div class="feature-tag">
+              <span class="tag-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#63A83D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                  <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                </svg>
+              </span>
+              <div>
+                <strong>Ingredientes Puros</strong>
+                <small>Sin conservantes artificiales</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nosotros-card reveal">
+          <div class="sticker-card">
+            <div class="card-pin" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#E31E24" stroke="#FFF" stroke-width="1.5">
+                <circle cx="12" cy="7" r="5"></circle>
+                <path d="M12 12v10"></path>
+              </svg>
+            </div>
+            <h3 class="card-chalk-title">El Decálogo del Buen Comer</h3>
+            <ul class="chalk-list">
+              <li><strong>La masa manda:</strong> Si la orilla no cruje, no sale del horno.</li>
+              <li><strong>Amor sin límite:</strong> Doble porción de queso en cada receta.</li>
+              <li><strong>Rápido y caliente:</strong> Tu pedido llega con el queso aún hirviendo.</li>
+              <li><strong>Atención cercana:</strong> Te atendemos por WhatsApp como a un amigo de toda la vida.</li>
+            </ul>
+            <div class="quote-signature">— El Chef de Love Pizza</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ SECCIÓN 02: MENÚ (Fondo Pizarra) ══════════════ -->
+  <section class="section section-dark" id="menu">
+    <div class="container">
+      <header class="section-header reveal">
+        <span class="eyebrow">02 — La Carta Completa</span>
+        <h2 class="section-title">Elige tu porción de <em>felicidad.</em></h2>
+        <p class="section-desc">Selecciona tu categoría favorita y personaliza el tamaño antes de agregar al carrito.</p>
+        <div class="heart-divider" aria-hidden="true">
+          <span></span>
+          <svg class="heart-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="#E31E24" stroke="#FFF" stroke-width="1.5">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span></span>
+        </div>
+      </header>
+
+      <!-- Barra de Filtros por Categoría -->
+      <nav class="categories-nav reveal" aria-label="Filtros de menú">
+        <div class="categories-scroll" id="categories-container" role="tablist">
+          <!-- Se inyecta dinámicamente con JS desde data.js sin emojis -->
+        </div>
+      </nav>
+
+      <!-- Contador de productos encontrados -->
+      <div class="menu-status reveal" id="menu-status" aria-live="polite">
+        Mostrando <span id="filtered-count">0</span> delicias
+      </div>
+
+      <!-- Cuadrícula de Productos Dinámica -->
+      <div class="products-grid" id="products-grid" role="region" aria-label="Lista de productos">
+        <!-- Renderizado dinámicamente con script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ SECCIÓN 03: GALERÍA (Grid Asimétrico 12 Columnas) ══════════════ -->
+  <section class="section section-cream" id="galeria">
+    <div class="container">
+      <header class="section-header reveal">
+        <span class="eyebrow">03 — Momentos & Detalles</span>
+        <h2 class="section-title">Amor a primera <em>mordida.</em></h2>
+        <p class="section-desc">Un vistazo a nuestras cocinas, nuestros ingredientes y las sonrisas en cada mesa.</p>
+        <div class="heart-divider" aria-hidden="true">
+          <span></span>
+          <svg class="heart-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="#E31E24" stroke="#C68A50" stroke-width="1.5">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span></span>
+        </div>
+      </header>
+
+      <!-- Grid Asimétrico de 12 Columnas -->
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Renderizado dinámico desde data.js GALERIA_FOTOS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ SECCIÓN 04: CITA / SLOGAN (Bloque Amarillo) ══════════════ -->
+  <section class="quote-banner" id="slogan" aria-label="Frase de la casa">
+    <div class="container">
+      <div class="quote-card reveal">
+        <span class="quote-heart" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="#E31E24" stroke="#1C1C1C" stroke-width="2">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </span>
+        <blockquote class="brand-quote">
+          "En cada porción horneamos felicidad. El verdadero amor entra por la masa crujiente y se queda en el corazón."
+        </blockquote>
+        <cite class="quote-author">— Filosofía Love Pizza</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ SECCIÓN 05: PEDIDO / CONTACTO (Fondo Pizarra) ══════════════ -->
+  <section class="section section-dark" id="contacto">
+    <div class="container">
+      <header class="section-header reveal">
+        <span class="eyebrow">04 — Pedido & Contacto</span>
+        <h2 class="section-title">¿Listo para <em>ordenar?</em></h2>
+        <p class="section-desc">Revisa tu resumen de compras o contáctanos directamente para reservar tu mesa.</p>
+        <div class="heart-divider" aria-hidden="true">
+          <span></span>
+          <svg class="heart-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="#E31E24" stroke="#FFF" stroke-width="1.5">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span></span>
+        </div>
+      </header>
+
+      <div class="order-contact-wrapper reveal">
+        <!-- Tarjeta de Resumen Rápido de Carrito / Pedido -->
+        <div class="order-card-box">
+          <div class="box-header">
+            <h3 class="box-title">Tu Carrito de Amor</h3>
+            <span class="box-badge" id="order-box-items-count">0 productos</span>
+          </div>
+
+          <div class="box-body" id="order-box-preview">
+            <!-- Vista previa rápida de los productos agregados -->
+            <div class="empty-state-mini">
+              <p>Tu carrito aún está vacío. ¡Explora nuestro menú y agrega tus pizzas favoritas!</p>
+              <a href="#menu" class="btn btn-primary btn-sm">Ver Pizzas Disponibles</a>
+            </div>
+          </div>
+
+          <div class="box-footer">
+            <div class="footer-total-row">
+              <span class="total-label">Subtotal estimado:</span>
+              <span class="total-amount" id="order-box-total">Q0.00</span>
+            </div>
+            <button type="button" class="btn btn-primary btn-block" id="order-box-checkout-btn">
+              Finalizar pedido por WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- Información de Ubicación, Horarios y Redes -->
+        <div class="info-card-box">
+          <h3 class="box-title">Visítanos o Escríbenos</h3>
+          <p class="info-intro">
+            Estamos ubicados en una zona accesible y con amplio parqueo. ¡Ven con tu pareja, familia o amigos!
+          </p>
+
+          <ul class="contact-details-list">
+            <li>
+              <span class="c-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFD52A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </span>
+              <div>
+                <strong>Dirección:</strong>
+                <span>Av. Las Américas 14-20, Zona 13, Ciudad de Guatemala</span>
+              </div>
+            </li>
+            <li>
+              <span class="c-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFD52A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </span>
+              <div>
+                <strong>Horarios de Atención:</strong>
+                <span>Martes a Domingo: 12:00 PM – 10:30 PM (Lunes cerrado)</span>
+              </div>
+            </li>
+            <li>
+              <span class="c-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFD52A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </span>
+              <div>
+                <strong>Teléfono / WhatsApp de Pedidos:</strong>
+                <a href="tel:+50233071482" class="contact-link">+502 3307-1482</a>
+              </div>
+            </li>
+            <li>
+              <span class="c-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFD52A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="5" cy="18" r="3"></circle>
+                  <circle cx="19" cy="18" r="3"></circle>
+                  <path d="M12 18v-6l4-2 3 3"></path>
+                  <path d="M5 18h6"></path>
+                </svg>
+              </span>
+              <div>
+                <strong>Zonas de Cobertura Delivery:</strong>
+                <span>Zonas 9, 10, 13, 14, 15 y Carretera a El Salvador (km 8-14)</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="social-share-pills">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" class="social-pill" aria-label="Instagram de Love Pizza">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              @lovepizza.gt
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" class="social-pill" aria-label="Facebook de Love Pizza">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+              /LovePizzaGuatemala
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <a href="#hero" class="footer-logo">
+          <img src="img/logo.svg" alt="LOVE PIZZA" width="160" height="38">
+        </a>
+        <p class="footer-tagline">
+          Horneando pizzas con forma de corazón y alegría auténtica desde Guatemala para el mundo.
+        </p>
+      </div>
+
+      <div class="footer-col links-col">
+        <h4 class="footer-title">Navegación</h4>
+        <ul class="footer-links">
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#nosotros">Nuestra Historia</a></li>
+          <li><a href="#menu">Menú de Pizzas</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto & Ubicación</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col hours-col">
+        <h4 class="footer-title">Horarios</h4>
+        <p><strong>Martes – Jueves:</strong> 12:00 PM - 10:00 PM</p>
+        <p><strong>Viernes – Sábado:</strong> 12:00 PM - 11:00 PM</p>
+        <p><strong>Domingo:</strong> 12:00 PM - 9:30 PM</p>
+        <p class="text-muted"><small>Lunes cerrado por descanso de masa</small></p>
+      </div>
+
+      <div class="footer-col payment-col">
+        <h4 class="footer-title">Métodos de Pago</h4>
+        <div class="payment-badges">
+          <span class="pay-badge">Efectivo</span>
+          <span class="pay-badge">Tarjetas POS</span>
+          <span class="pay-badge">Transferencia</span>
+          <span class="pay-badge">Pago Móvil</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container bottom-flex">
+        <p>© 2026 <strong>LOVE PIZZA</strong>. Todos los derechos reservados.</p>
+        <p class="chalk-credit">Hecho con amor y mucha albahaca fresca</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════ DRAWER LATERAL: CARRITO DE COMPRAS ══════════════ -->
+  <div class="cart-backdrop" id="cart-backdrop" aria-hidden="true"></div>
+
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-header-left">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFD52A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <h2 class="drawer-title" id="cart-drawer-title">Tu Pedido con Amor</h2>
+      </div>
+      <button type="button" class="drawer-close-btn" id="cart-close-btn" aria-label="Cerrar carrito de compras">&times;</button>
+    </div>
+
+    <!-- Lista de Artículos en el Carrito -->
+    <div class="drawer-body" id="cart-items-container">
+      <!-- Inyectado por script.js: lista o estado vacío -->
+    </div>
+
+    <!-- Pie del Carrito con Resumen y Formulario de Envío -->
+    <div class="drawer-footer" id="cart-drawer-footer">
+      <div class="drawer-totals">
+        <div class="drawer-total-row">
+          <span>Total a Pagar:</span>
+          <strong class="total-price-tag" id="cart-total-amount">Q0.00</strong>
+        </div>
+      </div>
+
+      <!-- Formulario de Entrega Rápida para WhatsApp -->
+      <form class="checkout-form" id="checkout-form" novalidate>
+        <div class="form-group">
+          <label for="client-name" class="form-label">Tu Nombre completo: <span class="req">*</span></label>
+          <input type="text" id="client-name" class="form-input" placeholder="Ej. Ana Lucía Morales" required autocomplete="name">
+          <span class="form-error" id="error-name" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Tipo de Entrega: <span class="req">*</span></label>
+          <div class="delivery-radio-group">
+            <label class="radio-card">
+              <input type="radio" name="delivery-type" value="domicilio" checked>
+              <span class="radio-label">A Domicilio</span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="delivery-type" value="recoger">
+              <span class="radio-label">Para Recoger</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group" id="address-group">
+          <label for="client-address" class="form-label">Dirección de Entrega: <span class="req">*</span></label>
+          <textarea id="client-address" class="form-textarea" rows="2" placeholder="Ej. Calle 12, Casa #45, Colonia El Encanto, Zona 10"></textarea>
+          <span class="form-error" id="error-address" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="client-notes" class="form-label">Indicaciones o Nota general (opcional):</label>
+          <input type="text" id="client-notes" class="form-input" placeholder="Ej. Tocar timbre blanco, traer cambio de Q100">
+        </div>
+
+        <!-- Botones de Acción Carrito -->
+        <div class="drawer-actions-stack">
+          <button type="submit" class="btn btn-whatsapp btn-block" id="btn-send-whatsapp">
+            <svg class="wa-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12.031 2C6.516 2 2 6.516 2 12.031c0 1.99.58 3.86 1.602 5.43L2.1 22.1l4.82-1.46c1.51.91 3.29 1.39 5.11 1.39 5.516 0 10.031-4.516 10.031-10.031S17.547 2 12.031 2zm5.836 14.18c-.24.67-1.39 1.25-1.92 1.33-.5.07-1.12.1-3.26-.79-2.73-1.14-4.5-3.89-4.63-4.07-.14-.18-1.1-1.46-1.1-2.79 0-1.33.69-1.98.94-2.25.24-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.4.06.6.53.22.5.74 1.8.8 1.93.07.13.11.29.02.47-.09.18-.13.29-.26.44-.13.15-.28.34-.4.46-.13.13-.27.27-.12.53.15.26.68 1.12 1.46 1.82 1 .89 1.85 1.17 2.11 1.3.26.13.42.11.57-.07.16-.18.67-.78.85-1.05.18-.26.36-.22.6-.13.24.09 1.54.73 1.8.86.26.13.44.2.5.31.07.12.07.69-.17 1.36z"/>
+            </svg>
+            Enviar pedido por WhatsApp
+          </button>
+          <button type="button" class="btn-clear-cart" id="btn-clear-cart">
+            Vaciar carrito
+          </button>
+        </div>
+      </form>
+    </div>
+  </aside>
+
+  <!-- ══════════════ MODAL SELECTOR DE TAMAÑO & NOTAS (Para Pizzas) ══════════════ -->
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
+
+  <div class="custom-modal" id="size-modal" role="dialog" aria-modal="true" aria-labelledby="modal-product-title" aria-hidden="true">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Cerrar ventana">&times;</button>
+      
+      <div class="modal-header">
+        <span class="modal-eyebrow">Personaliza tu pizza</span>
+        <h3 class="modal-title" id="modal-product-title">Nombre de Pizza</h3>
+        <p class="modal-desc" id="modal-product-desc">Descripción de los ingredientes frescos...</p>
+      </div>
+
+      <div class="modal-body">
+        <div class="size-selector-group">
+          <label class="form-label">Selecciona el Tamaño:</label>
+          <div class="sizes-grid" id="modal-sizes-container">
+            <!-- Botones de tamaño generados dinámicamente -->
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-item-note" class="form-label">Nota o instrucción especial (opcional):</label>
+          <input type="text" id="modal-item-note" class="form-input" placeholder="Ej. sin cebolla, bien doradita, corte en 8">
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="modal-price-display">
+          <span>Precio:</span>
+          <strong id="modal-selected-price">Q0.00</strong>
+        </div>
+        <button type="button" class="btn btn-primary" id="modal-add-btn">
+          Agregar al Carrito
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast de Confirmación -->
+  <div class="cart-toast" id="cart-toast" role="status" aria-live="polite" aria-hidden="true">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#E31E24" stroke="#FFF" stroke-width="1.5" aria-hidden="true">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+    <span class="toast-message" id="toast-message">¡Agregado al carrito!</span>
+  </div>
+
+  <!-- Barra Flotante Inferior de Pedido (Móvil) -->
+  <aside class="mobile-cart-bar" id="mobile-cart-bar" aria-label="Resumen rápido del pedido" aria-hidden="true">
+    <div class="mobile-cart-bar-content">
+      <div class="mobile-cart-bar-info">
+        <span class="mobile-cart-bar-badge" id="mobile-cart-count">0</span>
+        <div class="mobile-cart-bar-text">
+          <span class="mobile-cart-bar-label">Total estimado:</span>
+          <strong class="mobile-cart-bar-price" id="mobile-cart-total">Q0.00</strong>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary btn-sm mobile-cart-bar-btn" id="mobile-cart-btn" aria-label="Abrir carrito y ver pedido">
+        Ver Pedido &rarr;
+      </button>
+    </div>
+  </aside>
+
+  <!-- Carga de scripts puros en orden correcto -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
